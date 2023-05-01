@@ -53,5 +53,5 @@ export const Content = styled.main`
   align-items: center;
   justify-content: space-around;
 
-  background: linear-gradient(125deg, #111512 0%, #253011 50%);
+  background: linear-gradient(125deg, #f8f3e4 0%, #f8f3e4 100%);
 `;

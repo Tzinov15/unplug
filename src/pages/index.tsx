@@ -1,10 +1,9 @@
-import { Content, Header } from "@/april28_23/components/layout/layout";
-import { LogoText } from "@/april28_23/components/typography/typography";
-import { Shantell_Sans } from "next/font/google";
+import { Content } from "@/april28_23/components/layout/layout";
+import { Comfortaa } from "next/font/google";
 import Head from "next/head";
-import Link from "next/link";
+import Image from "next/image";
 
-const shantellSansFont = Shantell_Sans({ subsets: ["latin"], variable: "--shantell-font" });
+const ComfortaaFont = Comfortaa({ subsets: ["latin"], variable: "--comfortaa-font" });
 
 export default function Home() {
   return (
@@ -17,19 +16,16 @@ export default function Home() {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </Head>
-      <Header>
-        <div>
-          <LogoText className={shantellSansFont.variable}>Unplug</LogoText>
-        </div>
-      </Header>
       <Content>
-        <ul>
-          <li>
-            <h2 className="text-white text-3xl">
-              <Link href="/april28_2023">April 28th, 2013</Link>
-            </h2>
-          </li>
-        </ul>
+        <div>
+          <Image src="/brandmark-design.png" alt={""} width={1000} height={50} />
+          <p
+            className={ComfortaaFont.className}
+            style={{ color: "#B59D5F", fontSize: "2rem", marginTop: "2rem" }}
+          >
+            Regaining our time back one unplugged day at a time.
+          </p>
+        </div>
       </Content>
     </>
   );
