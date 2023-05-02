@@ -272,7 +272,7 @@ export default function Home() {
             className={`${ComfortaaFont.className} text-base md:text-lg `}
             style={{ marginTop: "2rem" }}
           >
-            No, this is not an app. That would defeat the purpose. It's a movement, and we hope you
+            No, this is not an app. That would defeat the purpose. It is a movement, and we hope you
             try it. Happy Unplugging 🎉
           </p>
         </LastPage>
