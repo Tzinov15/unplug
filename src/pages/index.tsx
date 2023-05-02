@@ -258,13 +258,22 @@ export default function Home() {
             doom-scrolling. We grew tired of how tethered we were to those digital hand-held
             attention prisons despite knowing they are not good for us. We grew tired of the void in
             human connection when all we ever do is communicate through social media.
-            <br />
-            <br />
+          </p>
+          <br />
+          <p
+            className={`${ComfortaaFont.className} text-base md:text-lg `}
+            style={{ marginTop: "2rem" }}
+          >
             We grew tired of being plugged in and wanted to start something new. An occasional,
             socially-accepted period of time where we get to unplug and remember what life is about.
-            <br />
-            <br />
-            Happy Unplugging
+          </p>
+          <br />
+          <p
+            className={`${ComfortaaFont.className} text-base md:text-lg `}
+            style={{ marginTop: "2rem" }}
+          >
+            No, this is not an app. That would defeat the purpose. It's a movement, and we hope you
+            try it. Happy Unplugging 🎉
           </p>
         </LastPage>
       </Content>
