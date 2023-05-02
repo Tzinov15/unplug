@@ -1,4 +1,4 @@
-import { Body } from "@/april28_23/components/layout/layout";
+import { Body } from "@/components/layout/layout";
 import { myTheme } from "@/theme";
 import { ThemeProvider } from "@emotion/react";
 import { Head, Html, Main, NextScript } from "next/document";
