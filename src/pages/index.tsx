@@ -221,23 +221,26 @@ export default function Home() {
           >
             Reconnect on missed messages, ease into the world, enjoy the new found space from the
             daily buzz, tell your friends about it.
-            <br />
-            <br />
-            <br />
-            <hr style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }} />* on iOS, to
-            setup an auto reply you can go to Settings ➡️ Focus ➡️ Driving ➡️ Auto-Reply and then
-            paste our pre-written message which you can copy{" "}
-            <u
-              onClick={() => {
-                window.navigator.clipboard.writeText(
-                  `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
-                );
-              }}
-            >
-              here
-            </u>
-            . Then simply turn on Driving mode and this will get sent to your contacts when they
-            text you.
+            <p />
+            <hr
+              className="my-4"
+              style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
+            />
+            <p>
+              * on iOS, to setup an auto reply you can go to Settings ➡️ Focus ➡️ Driving ➡️
+              Auto-Reply and then paste our pre-written message which you can copy{" "}
+              <u
+                onClick={() => {
+                  window.navigator.clipboard.writeText(
+                    `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
+                  );
+                }}
+              >
+                here
+              </u>
+              . Then simply turn on Driving mode and this will get sent to your contacts when they
+              text you.
+            </p>
           </p>
         </SecondPage>
         <LastPage>
