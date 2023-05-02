@@ -180,7 +180,7 @@ export default function Home() {
               color: "black",
             }}
           >
-            Let friends / family know you'll only be responding to phone calls, setup auto-replies
+            Let friends / family know you will only be responding to phone calls, setup auto-replies
             for messages, print out map directions if you have plans to drive somewhere, print out
             recipes ahead of time. Plan so that not a single phone or computer has to get used. Go
             to bed knowing tomorrows day is on your terms.
@@ -256,7 +256,7 @@ export default function Home() {
           >
             We grew tired of how unfulfilling our days were becoming with hours spent every day
             doom-scrolling. We grew tired of how tethered we were to those digital hand-held
-            attention prisons despite knowing they're not good for us. We grew tired of the void in
+            attention prisons despite knowing they are not good for us. We grew tired of the void in
             human connection when all we ever do is communicate through social media.
             <br />
             <br />
