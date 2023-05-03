@@ -105,7 +105,7 @@ export const ImageContainer = styled.div`
 
   @media (min-width: 500px) {
     img {
-      width: 70%;
+      width: 80%;
     }
   }
 `;
@@ -121,7 +121,7 @@ export const SmallerImageContainer = styled.div`
 
   @media (min-width: 500px) {
     img {
-      width: 40%;
+      width: 80%;
     }
   }
 `;

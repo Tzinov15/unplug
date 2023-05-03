@@ -11,7 +11,18 @@ import { Comfortaa } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
 
-import { faPlug, faSquareCheck, faTree } from "@fortawesome/pro-solid-svg-icons";
+import autoReplyImage from "./autoreply.png";
+import drivingImage from "./driving.png";
+import focusImage from "./focus.png";
+import messageImage from "./message.png";
+import settingsIcon from "./settings-icon.png";
+
+import drivingState from "./driving.jpg";
+import focusState from "./focus-state.jpg";
+
+const stepIconSize = 32;
+
+import { faArrowRight, faPlug, faSquareCheck, faTree } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ComfortaaFont = Comfortaa({ subsets: ["latin"], variable: "--comfortaa-font" });
@@ -30,13 +41,14 @@ export default function Home() {
       <Content>
         <IntroPage className="justify-end flex">
           <ImageContainer>
-            <Image src="/unplug.png" alt={""} width={0} height={0} sizes="100vw" />
+            <Image priority src="/unplug.png" alt={""} width={0} height={0} sizes="100vw" />
           </ImageContainer>
           <p
             className={`${ComfortaaFont.className} text-xl md:text-3xl `}
             style={{ color: "#B59D5F", marginTop: "2rem" }}
           >
-            Regain your time back one <b>unplugged</b> day at a time.
+            A social movement of unplugging from technology guilt free.
+            {/* Regain your time back one <b>unplugged</b> day at a time. */}
           </p>
         </IntroPage>
         <IntroPage style={{ justifyContent: "space-between", paddingBottom: 0 }}>
@@ -44,33 +56,135 @@ export default function Home() {
             style={{
               color: "#B49C61",
               fontWeight: 800,
+              margin: "0 auto",
             }}
-            className={`${ComfortaaFont.className} text-xl md:text-5xl my-6 `}
+            className={`${ComfortaaFont.className} text-sm md:text-md my-1 w-full md:w-2/3 `}
           >
+            <p
+              className={`${ComfortaaFont.className} text-base md:text-lg `}
+              style={{ color: "#B59D5F" }}
+            >
+              We&apos;re happier off our phones.
+              {/* Regain your time back one <b>unplugged</b> day at a time. */}
+            </p>
+            <p
+              className={`${ComfortaaFont.className} text-base md:text-lg `}
+              style={{ color: "#B59D5F" }}
+            >
+              Yet we live in a connected world.
+              {/* Regain your time back one <b>unplugged</b> day at a time. */}
+            </p>
+            <p
+              className={`${ComfortaaFont.className} text-base md:text-lg `}
+              style={{ color: "#B59D5F" }}
+            >
+              We found a solve.
+            </p>
+
+            <hr
+              className="my-4"
+              style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
+            />
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Setup auto reply*
+              Use iOS&apos;s Focus State of &quot;Driving&quot; to setup an auto-reply message.
+            </p>
+            <div className="flex items-center justify-center w-full">
+              <div className="flex flex-col items-center">
+                <Image
+                  priority
+                  src={settingsIcon}
+                  alt={""}
+                  width={stepIconSize}
+                  height={stepIconSize}
+                />
+                <p
+                  className={`${ComfortaaFont.className} text-xs md:text-md my-1 `}
+                  style={{ color: "#91928F" }}
+                >
+                  Settings
+                </p>
+              </div>
+              <FontAwesomeIcon className="mx-1" icon={faArrowRight} color="#B49C61" size="2x" />
+              <div className="flex flex-col items-center">
+                <Image
+                  priority
+                  src={focusImage}
+                  alt={""}
+                  width={stepIconSize}
+                  height={stepIconSize}
+                />
+                <p
+                  className={`${ComfortaaFont.className} font-bold text-xs md:text-md my-1 `}
+                  style={{ color: "#575ACE" }}
+                >
+                  Focus
+                </p>
+              </div>
+              <FontAwesomeIcon className="mx-2" icon={faArrowRight} color="#B49C61" size="2x" />
+
+              <div className="flex flex-col items-center">
+                <Image
+                  priority
+                  src={drivingImage}
+                  alt={""}
+                  width={stepIconSize}
+                  height={stepIconSize}
+                />
+                <p
+                  className={`${ComfortaaFont.className} text-xs md:text-md my-1 `}
+                  style={{ color: "#33379D" }}
+                >
+                  Driving
+                </p>
+              </div>
+              <FontAwesomeIcon className="mx-1" icon={faArrowRight} color="#B49C61" size="2x" />
+              <Image priority src={autoReplyImage} alt={""} width={94} height={32} />
+            </div>
+
+            <SmallerImageContainer className="my-2">
+              <Image
+                priority
+                placeholder="blur"
+                src={messageImage}
+                alt={""}
+                width={0}
+                height={0}
+                sizes="100vw"
+              />
+            </SmallerImageContainer>
+
+            <p className="text-center my-1">
+              <u
+                onClick={() => {
+                  if (typeof window !== undefined) {
+                    window.navigator.clipboard.writeText(
+                      `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
+                    );
+                  }
+                }}
+              >
+                Click here to copy the above
+              </u>
             </p>
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Enable Do Not Disturb
+              Enable Driving Mode
+            </p>
+            <div className="flex items-center justify-around w-full">
+              <Image priority src={focusState} alt={""} width={80} height={stepIconSize} />
+              <Image priority src={drivingState} alt={""} width={120} height={stepIconSize} />
+            </div>
+
+            <p className="my-3">
+              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
+              Turn on ringer in case of calls.
             </p>
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Lock your screen
-            </p>
-            <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Ignore for 36 hours
-            </p>
-            <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Take back your time
+              Lock your screen, ignore for 36 hours
             </p>
           </div>
-          <SmallerImageContainer>
-            <Image src="/screenshot-demo.png" alt={""} width={0} height={0} sizes="100vw" />
-          </SmallerImageContainer>
         </IntroPage>
         <Page>
           <div className="flex items-center flex-col w-full">
@@ -121,6 +235,7 @@ export default function Home() {
                   <p>- No meetings</p>
                   <p>- No work</p>
                   <p>- No email</p>
+                  <p>- No video games</p>
                   <p>- No navigation</p>
                   <p>- No scrolling</p>
                   <p>- No screens</p>
@@ -174,6 +289,7 @@ export default function Home() {
           >
             Day Before
           </p>
+
           <p
             className={`${ComfortaaFont.className} text-sm md:text-xl my-1 `}
             style={{
@@ -185,6 +301,7 @@ export default function Home() {
             recipes ahead of time. Plan so that not a single phone or computer has to get used. Go
             to bed knowing tomorrows day is on your terms.
           </p>
+
           <p
             className={`${ComfortaaFont.className} text-3xl md:text-6xl my-2 `}
             style={{
@@ -194,6 +311,7 @@ export default function Home() {
           >
             Day Of
           </p>
+
           <p
             className={`${ComfortaaFont.className} text-sm md:text-xl my-1 `}
             style={{
@@ -204,6 +322,7 @@ export default function Home() {
             attention to the habituated patterns to fill empty time with social media and
             doom-scrolling and instead try something new.
           </p>
+
           <p
             className={`${ComfortaaFont.className} text-3xl md:text-6xl my-2 `}
             style={{
@@ -213,6 +332,7 @@ export default function Home() {
           >
             Day After
           </p>
+
           <p
             className={`${ComfortaaFont.className} text-sm md:text-xl my-1 `}
             style={{
@@ -221,26 +341,27 @@ export default function Home() {
           >
             Reconnect on missed messages, ease into the world, enjoy the new found space from the
             daily buzz, tell your friends about it.
-            <p />
-            <hr
-              className="my-4"
-              style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
-            />
-            <p>
-              * on iOS, to setup an auto reply you can go to Settings ➡️ Focus ➡️ Driving ➡️
-              Auto-Reply and then paste our pre-written message which you can copy{" "}
-              <u
-                onClick={() => {
+          </p>
+          <hr
+            className="my-4"
+            style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
+          />
+          <p>
+            * on iOS, to setup an auto reply you can go to Settings ➡️ Focus ➡️ Driving ➡️
+            Auto-Reply and then paste our pre-written message which you can copy{" "}
+            <u
+              onClick={() => {
+                if (typeof window !== undefined) {
                   window.navigator.clipboard.writeText(
                     `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
                   );
-                }}
-              >
-                here
-              </u>
-              . Then simply turn on Driving mode and this will get sent to your contacts when they
-              text you.
-            </p>
+                }
+              }}
+            >
+              here
+            </u>
+            . Then simply turn on Driving mode and this will get sent to your contacts when they
+            text you.
           </p>
         </SecondPage>
         <LastPage>
