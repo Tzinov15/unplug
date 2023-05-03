@@ -46,7 +46,7 @@ export default function Home() {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </Head>
-      <Content>
+      <Content id="content">
         <IntroPage className="justify-end flex">
           <ImageContainer>
             <Image priority src="/unplug.png" alt={""} width={0} height={0} sizes="100vw" />
@@ -96,6 +96,17 @@ export default function Home() {
           <FontAwesomeIcon
             className="mr-2 fa-fade absolute"
             icon={faCircleArrowDown}
+            onClick={() => {
+              const el = document.getElementById("content");
+              const pos = el!.getBoundingClientRect();
+              const page2 = document.getElementById("page2");
+              console.log({ el, pos, page2 });
+              page2!.scrollTo(0, pos.top);
+              // window.scrollBy({
+              //   top: window.innerHeight,
+              //   behavior: "smooth",
+              // );
+            }}
             style={{
               bottom: "64px",
             }}
@@ -103,7 +114,7 @@ export default function Home() {
             size="3x"
           />
         </IntroPage>
-        <IntroPage style={{ justifyContent: "space-between", paddingBottom: 0 }}>
+        <IntroPage id="page2" style={{ justifyContent: "space-between", paddingBottom: 0 }}>
           <div
             style={{
               color: "#B49C61",
@@ -214,6 +225,12 @@ export default function Home() {
             icon={faCircleArrowDown}
             style={{
               bottom: "64px",
+            }}
+            onClick={() => {
+              window.scrollBy({
+                top: 100,
+                behavior: "smooth",
+              });
             }}
             color="#B49C61"
             size="3x"
