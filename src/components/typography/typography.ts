@@ -49,3 +49,10 @@ export const Button = styled.button<ButtonProps>`
   border: ${(props) =>
     `solid 2px ${props.buttonType === "primary" ? "white" : props.theme.colors.second}`};
 `;
+
+export const StyledText = styled.p`
+  background: #bda66b;
+  background: linear-gradient(to bottom right, #ffffff 0%, #bda66b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;

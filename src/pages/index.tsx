@@ -20,9 +20,18 @@ import settingsIcon from "./settings-icon.png";
 import drivingState from "./driving.jpg";
 import focusState from "./focus-state.jpg";
 
+import logo from "./logo.png";
+
 const stepIconSize = 32;
 
-import { faArrowRight, faPlug, faSquareCheck, faTree } from "@fortawesome/pro-solid-svg-icons";
+import { StyledText } from "@/components/typography/typography";
+import {
+  faArrowRight,
+  faCircleArrowDown,
+  faPlug,
+  faSquareCheck,
+  faTree,
+} from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ComfortaaFont = Comfortaa({ subsets: ["latin"], variable: "--comfortaa-font" });
@@ -44,21 +53,24 @@ export default function Home() {
             <Image priority src="/unplug.png" alt={""} width={0} height={0} sizes="100vw" />
           </ImageContainer>
           <p
-            className={`${ComfortaaFont.className} text-xl md:text-3xl `}
-            style={{ color: "#B59D5F", marginTop: "2rem" }}
+            className={`${ComfortaaFont.className} text-2xl md:text-4xl text-center `}
+            style={{ color: "#B59D5F", marginTop: "1rem" }}
           >
             A social movement of unplugging from technology guilt free.
             {/* Regain your time back one <b>unplugged</b> day at a time. */}
           </p>
-        </IntroPage>
-        <IntroPage style={{ justifyContent: "space-between", paddingBottom: 0 }}>
+
+          <hr
+            className="my-4"
+            style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
+          />
           <div
             style={{
               color: "#B49C61",
               fontWeight: 800,
               margin: "0 auto",
             }}
-            className={`${ComfortaaFont.className} text-sm md:text-md my-1 w-full md:w-2/3 `}
+            className={`${ComfortaaFont.className} flex flex-col items-center text-sm md:text-md my-1 w-full md:w-2/3 `}
           >
             <p
               className={`${ComfortaaFont.className} text-base md:text-lg `}
@@ -80,10 +92,41 @@ export default function Home() {
             >
               We found a solve.
             </p>
+          </div>
+
+          <FontAwesomeIcon
+            className="mr-2 fa-fade absolute bottom-6"
+            icon={faCircleArrowDown}
+            color="#B49C61"
+            size="3x"
+          />
+        </IntroPage>
+        <IntroPage style={{ justifyContent: "space-between", paddingBottom: 0 }}>
+          <div
+            style={{
+              color: "#B49C61",
+              fontWeight: 800,
+              margin: "0 auto",
+            }}
+            className={`${ComfortaaFont.className} text-sm md:text-xl my-1 w-full md:w-2/3 `}
+          >
+            <div
+              style={{
+                color: "#B49C61",
+                fontWeight: 800,
+                margin: "0 auto",
+              }}
+              className={`${ComfortaaFont.className} text-sm md:text-xl my-1 w-full md:w-2/3 flex items-center justify-between `}
+            >
+              <Image priority src="/unplug.png" alt={""} width={150} height={0} sizes="100vw" />
+              <p className="text-base md:text-xl">
+                = <b>36 </b>hour phone fasts
+              </p>
+            </div>
 
             <hr
               className="my-4"
-              style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
+              style={{ height: "4px", borderTopColor: "#B49C61", width: "100%" }}
             />
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
@@ -185,6 +228,13 @@ export default function Home() {
               Lock your screen, ignore for 36 hours
             </p>
           </div>
+
+          <FontAwesomeIcon
+            className="mr-2 fa-fade absolute bottom-6"
+            icon={faCircleArrowDown}
+            color="#B49C61"
+            size="3x"
+          />
         </IntroPage>
         <Page>
           <div className="flex items-center flex-col w-full">
@@ -196,15 +246,6 @@ export default function Home() {
               }}
             >
               Unplugged =
-            </p>
-            <p
-              className={`${ComfortaaFont.className} text-md md:text-xl mt-0 mb-5 `}
-              style={{
-                color: "#F6F1E0",
-                fontWeight: 800,
-              }}
-            >
-              A 36 hour break from technology
             </p>
 
             <div className="flex items-start justify-between flex-row w-full">
@@ -278,6 +319,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <FontAwesomeIcon
+            className="mr-2 fa-fade absolute bottom-6"
+            icon={faCircleArrowDown}
+            color="white"
+            size="3x"
+          />
         </Page>
         <SecondPage>
           <p
@@ -287,7 +335,7 @@ export default function Home() {
               fontWeight: 800,
             }}
           >
-            Day Before
+            Night Before
           </p>
 
           <p
@@ -298,8 +346,7 @@ export default function Home() {
           >
             Let friends / family know you will only be responding to phone calls, setup auto-replies
             for messages, print out map directions if you have plans to drive somewhere, print out
-            recipes ahead of time. Plan so that not a single phone or computer has to get used. Go
-            to bed knowing tomorrows day is on your terms.
+            recipes ahead of time. Plan so that not a single phone or computer has to get used.
           </p>
 
           <p
@@ -341,28 +388,22 @@ export default function Home() {
           >
             Reconnect on missed messages, ease into the world, enjoy the new found space from the
             daily buzz, tell your friends about it.
+            <br />
+            <br />
+            We will start surfacing stories from peoples Unplugged days so feel free to send them to
+            unplug.club.stories@gmail.com
           </p>
           <hr
             className="my-4"
             style={{ height: "4px", borderTopColor: "#8B5C004D", width: "100%" }}
           />
-          <p>
-            * on iOS, to setup an auto reply you can go to Settings ➡️ Focus ➡️ Driving ➡️
-            Auto-Reply and then paste our pre-written message which you can copy{" "}
-            <u
-              onClick={() => {
-                if (typeof window !== undefined) {
-                  window.navigator.clipboard.writeText(
-                    `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
-                  );
-                }
-              }}
-            >
-              here
-            </u>
-            . Then simply turn on Driving mode and this will get sent to your contacts when they
-            text you.
-          </p>
+
+          <FontAwesomeIcon
+            className="mr-2 fa-fade absolute bottom-6"
+            icon={faCircleArrowDown}
+            color="black"
+            size="3x"
+          />
         </SecondPage>
         <LastPage>
           <p
@@ -371,7 +412,7 @@ export default function Home() {
           >
             Why did Unplug happen?
           </p>
-          <p
+          <StyledText
             className={`${ComfortaaFont.className} text-base md:text-lg `}
             style={{ marginTop: "2rem" }}
           >
@@ -379,23 +420,17 @@ export default function Home() {
             doom-scrolling. We grew tired of how tethered we were to those digital hand-held
             attention prisons despite knowing they are not good for us. We grew tired of the void in
             human connection when all we ever do is communicate through social media.
-          </p>
-          <br />
-          <p
-            className={`${ComfortaaFont.className} text-base md:text-lg `}
-            style={{ marginTop: "2rem" }}
-          >
+            <br />
+            <br />
             We grew tired of being plugged in and wanted to start something new. An occasional,
             socially-accepted period of time where we get to unplug and remember what life is about.
-          </p>
-          <br />
-          <p
-            className={`${ComfortaaFont.className} text-base md:text-lg `}
-            style={{ marginTop: "2rem" }}
-          >
+            <br />
+            <br />
             No, this is not an app. That would defeat the purpose. It is a movement, and we hope you
             try it. Happy Unplugging 🎉
-          </p>
+          </StyledText>
+
+          <Image priority src={logo} alt={""} width={100} height={100} className="my-3" />
         </LastPage>
       </Content>
     </>

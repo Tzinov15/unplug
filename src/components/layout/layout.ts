@@ -87,6 +87,7 @@ export const IntroPage = styled(Page)`
 
 export const SecondPage = styled(Page)`
   background: #e2d1a8;
+  padding: 3rem;
 `;
 
 export const LastPage = styled(Page)`
@@ -116,12 +117,12 @@ export const SmallerImageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   img {
-    width: 100%;
+    width: 90%;
   }
 
   @media (min-width: 500px) {
     img {
-      width: 80%;
+      width: 50%;
     }
   }
 `;
