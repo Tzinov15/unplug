@@ -4,7 +4,6 @@ import {
   IntroPage,
   LastPage,
   Page,
-  SecondPage,
   SmallerImageContainer,
 } from "@/components/layout/layout";
 import { Comfortaa } from "next/font/google";
@@ -95,8 +94,11 @@ export default function Home() {
           </div>
 
           <FontAwesomeIcon
-            className="mr-2 fa-fade absolute bottom-6"
+            className="mr-2 fa-fade absolute"
             icon={faCircleArrowDown}
+            style={{
+              bottom: "64px",
+            }}
             color="#B49C61"
             size="3x"
           />
@@ -110,24 +112,6 @@ export default function Home() {
             }}
             className={`${ComfortaaFont.className} text-sm md:text-xl my-1 w-full md:w-2/3 `}
           >
-            <div
-              style={{
-                color: "#B49C61",
-                fontWeight: 800,
-                margin: "0 auto",
-              }}
-              className={`${ComfortaaFont.className} text-sm md:text-xl my-1 w-full md:w-2/3 flex items-center justify-between `}
-            >
-              <Image priority src="/unplug.png" alt={""} width={150} height={0} sizes="100vw" />
-              <p className="text-base md:text-xl">
-                = <b>36 </b>hour phone fasts
-              </p>
-            </div>
-
-            <hr
-              className="my-4"
-              style={{ height: "4px", borderTopColor: "#B49C61", width: "100%" }}
-            />
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
               Use iOS&apos;s Focus State of &quot;Driving&quot; to setup an auto-reply message.
@@ -221,17 +205,16 @@ export default function Home() {
 
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Turn on ringer in case of calls.
-            </p>
-            <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Lock your screen, ignore for 36 hours
+              Lock your screen, go to bed, ignore for 36 hours
             </p>
           </div>
 
           <FontAwesomeIcon
-            className="mr-2 fa-fade absolute bottom-6"
+            className="mr-2 fa-fade absolute"
             icon={faCircleArrowDown}
+            style={{
+              bottom: "64px",
+            }}
             color="#B49C61"
             size="3x"
           />
@@ -323,11 +306,14 @@ export default function Home() {
           <FontAwesomeIcon
             className="mr-2 fa-fade absolute bottom-6"
             icon={faCircleArrowDown}
+            style={{
+              bottom: "64px",
+            }}
             color="white"
             size="3x"
           />
         </Page>
-        <SecondPage>
+        {/* <SecondPage>
           <p
             className={`${ComfortaaFont.className} text-3xl md:text-6xl my-2 `}
             style={{
@@ -401,10 +387,13 @@ export default function Home() {
           <FontAwesomeIcon
             className="mr-2 fa-fade absolute bottom-6"
             icon={faCircleArrowDown}
+            style={{
+              bottom: "64px",
+            }}
             color="black"
             size="3x"
           />
-        </SecondPage>
+        </SecondPage> */}
         <LastPage>
           <p
             className={`${ComfortaaFont.className} text-xl md:text-6xl `}
