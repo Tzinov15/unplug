@@ -245,7 +245,7 @@ export default function Home() {
 
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Avoid the compulsions to check and scroll for 36 hours
+              Avoid the compulsions to check and scroll for 36 hours (2 nights, 1 full day)
             </p>
           </div>
 
@@ -435,7 +435,10 @@ export default function Home() {
             <br />
             <br />
             We wanted to start something different. An occasional, socially responsible period of
-            time to unplug and go outside.
+            time to unplug and live more.
+            <br />
+            <br />
+            So we tried one of these technology fasts. And guess what? It was beautiful.
             <br />
             <br />
             No, this is not an app. That would defeat the purpose. It is a movement, and we hope you
