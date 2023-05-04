@@ -32,8 +32,34 @@ import {
   faTree,
 } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import confetti from "canvas-confetti";
 
 const ComfortaaFont = Comfortaa({ subsets: ["latin"], variable: "--comfortaa-font" });
+
+export const PageBottomIcon: React.FC<{ color: string }> = ({ color }) => {
+  return (
+    <FontAwesomeIcon
+      className="mr-2 fa-fade absolute"
+      icon={faCircleArrowDown}
+      onClick={() => {
+        const el = document.getElementById("content");
+        const pos = el!.getBoundingClientRect();
+        const page2 = document.getElementById("page2");
+        console.log({ el, pos, page2 });
+        page2!.scrollTo(0, pos.top);
+        // window.scrollBy({
+        //   top: window.innerHeight,
+        //   behavior: "smooth",
+        // );
+      }}
+      style={{
+        bottom: "84px",
+      }}
+      color={color}
+      size="3x"
+    />
+  );
+};
 
 export default function Home() {
   return (
@@ -45,6 +71,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
       </Head>
       <Content id="content">
         <IntroPage className="justify-end flex">
@@ -55,7 +82,7 @@ export default function Home() {
             className={`${ComfortaaFont.className} text-2xl md:text-4xl text-center `}
             style={{ color: "#B59D5F", marginTop: "1rem" }}
           >
-            A social movement of unplugging from technology guilt free.
+            A social movement of unplugging from technology responsibly.
             {/* Regain your time back one <b>unplugged</b> day at a time. */}
           </p>
 
@@ -93,26 +120,7 @@ export default function Home() {
             </p>
           </div>
 
-          <FontAwesomeIcon
-            className="mr-2 fa-fade absolute"
-            icon={faCircleArrowDown}
-            onClick={() => {
-              const el = document.getElementById("content");
-              const pos = el!.getBoundingClientRect();
-              const page2 = document.getElementById("page2");
-              console.log({ el, pos, page2 });
-              page2!.scrollTo(0, pos.top);
-              // window.scrollBy({
-              //   top: window.innerHeight,
-              //   behavior: "smooth",
-              // );
-            }}
-            style={{
-              bottom: "64px",
-            }}
-            color="#B49C61"
-            size="3x"
-          />
+          <PageBottomIcon color="#B49C61" />
         </IntroPage>
         <IntroPage id="page2" style={{ justifyContent: "space-between", paddingBottom: 0 }}>
           <div
@@ -125,7 +133,7 @@ export default function Home() {
           >
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Use iOS&apos;s Focus State of &quot;Driving&quot; to setup an auto-reply message.
+              Setup an auto-reply message (on iOS)
             </p>
             <div className="flex items-center justify-center w-full">
               <div className="flex flex-col items-center">
@@ -194,11 +202,14 @@ export default function Home() {
 
             <p className="text-center my-1">
               <u
-                onClick={() => {
+                onClick={async () => {
                   if (typeof window !== undefined) {
                     window.navigator.clipboard.writeText(
                       `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
                     );
+                    confetti({
+                      colors: ["#B49C61"],
+                    });
                   }
                 }}
               >
@@ -216,25 +227,11 @@ export default function Home() {
 
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Lock your screen, go to bed, ignore for 36 hours
+              Lock your screen & ignore for 36 hours
             </p>
           </div>
 
-          <FontAwesomeIcon
-            className="mr-2 fa-fade absolute"
-            icon={faCircleArrowDown}
-            style={{
-              bottom: "64px",
-            }}
-            onClick={() => {
-              window.scrollBy({
-                top: 100,
-                behavior: "smooth",
-              });
-            }}
-            color="#B49C61"
-            size="3x"
-          />
+          <PageBottomIcon color="#B49C61" />
         </IntroPage>
         <Page>
           <div className="flex items-center flex-col w-full">
@@ -320,15 +317,7 @@ export default function Home() {
             </div>
           </div>
 
-          <FontAwesomeIcon
-            className="mr-2 fa-fade absolute bottom-6"
-            icon={faCircleArrowDown}
-            style={{
-              bottom: "64px",
-            }}
-            color="white"
-            size="3x"
-          />
+          <PageBottomIcon color="white" />
         </Page>
         {/* <SecondPage>
           <p
@@ -422,14 +411,13 @@ export default function Home() {
             className={`${ComfortaaFont.className} text-base md:text-lg `}
             style={{ marginTop: "2rem" }}
           >
-            We grew tired of how unfulfilling our days were becoming with hours spent every day
-            doom-scrolling. We grew tired of how tethered we were to those digital hand-held
-            attention prisons despite knowing they are not good for us. We grew tired of the void in
-            human connection when all we ever do is communicate through social media.
+            We grew tired of unfulfilling days spent doom-scrolling. We grew tired of being so
+            tethered to our digital hand-held attention prisons. We grew tired of missing real human
+            connection.
             <br />
             <br />
-            We grew tired of being plugged in and wanted to start something new. An occasional,
-            socially-accepted period of time where we get to unplug and remember what life is about.
+            We wanted to start something different. An occasional, socially responsible period of
+            time to unplug and go outside.
             <br />
             <br />
             No, this is not an app. That would defeat the purpose. It is a movement, and we hope you

@@ -117,7 +117,7 @@ export const SmallerImageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   img {
-    width: 90%;
+    width: 70%;
   }
 
   @media (min-width: 500px) {
