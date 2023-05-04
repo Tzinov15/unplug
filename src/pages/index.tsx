@@ -38,7 +38,10 @@ const ComfortaaFont = Comfortaa({
   weight: "variable",
 });
 
-export const PageBottomIcon: React.FC<{ color: string }> = ({ color }) => {
+export const PageBottomIcon: React.FC<{ color: string; first?: boolean }> = ({
+  color,
+  first = false,
+}) => {
   return (
     <FontAwesomeIcon
       className="mr-2 fa-fade absolute"
@@ -55,7 +58,7 @@ export const PageBottomIcon: React.FC<{ color: string }> = ({ color }) => {
         // );
       }}
       style={{
-        bottom: "84px",
+        bottom: first ? "84px" : "48px",
       }}
       color={color}
       size="3x"
@@ -121,7 +124,7 @@ export default function Home() {
             </p>
           </div>
 
-          <PageBottomIcon color="#B49C61" />
+          <PageBottomIcon color="#B49C61" first />
         </IntroPage>
         <IntroPage id="page2" style={{ justifyContent: "space-between", paddingBottom: 0 }}>
           <Script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></Script>
@@ -429,16 +432,16 @@ export default function Home() {
             className={`${ComfortaaFont.className} text-base md:text-lg `}
             style={{ marginTop: "2rem" }}
           >
-            We grew tired of unfulfilling days spent doom-scrolling. We grew tired of being so
-            tethered to our digital hand-held attention prisons. We grew tired of missing real human
-            connection.
+            We grew tired of doom-scrolling. <br />
+            We grew tired of being tethered to screens. <br />
+            We grew tired of lacking real human connection.
             <br />
             <br />
             We wanted to start something different. An occasional, socially responsible period of
             time to unplug and live more.
             <br />
             <br />
-            So we tried one of these technology fasts. And guess what? It was beautiful.
+            We have tried a few of these technology fasts. And guess what? They are beautiful.
             <br />
             <br />
             No, this is not an app. That would defeat the purpose. It is a movement, and we hope you
