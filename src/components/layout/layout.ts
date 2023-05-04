@@ -54,8 +54,8 @@ export const Content = styled.main`
   align-items: center;
   justify-content: flex-start;
 
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  /* scroll-snap-type: y mandatory;
+  overflow-y: scroll; */
 
   background: linear-gradient(125deg, #f8f3e4 0%, #f8f3e4 100%);
 `;
@@ -66,7 +66,7 @@ export const Page = styled.section`
   position: relative;
   width: auto;
   min-height: 100vh;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
   padding: 3rem 1rem;
   @media (min-width: 500px) {
     padding: 3rem 3rem;
