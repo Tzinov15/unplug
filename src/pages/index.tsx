@@ -21,6 +21,7 @@ import logo from "./logo.png";
 const stepIconSize = 32;
 
 import { StyledText } from "@/components/typography/typography";
+import { datadogRum } from "@datadog/browser-rum";
 import {
   faArrowRight,
   faCircleArrowDown,
@@ -36,6 +37,22 @@ const ComfortaaFont = Comfortaa({
   subsets: ["latin"],
   variable: "--comfortaa-font",
   weight: "variable",
+});
+
+datadogRum.init({
+  applicationId: "b8ee845b-2f53-4604-88e1-2789cc1de3b6",
+  clientToken: "pubde7234316a64cf0e2874146fedf97403",
+  site: "datadoghq.com",
+  service: "unplug",
+  env: "<ENV_NAME>",
+  // Specify a version number to identify the deployed version of your application in Datadog
+  // version: '1.0.0',
+  sessionSampleRate: 100,
+  sessionReplaySampleRate: 20,
+  trackUserInteractions: true,
+  trackResources: true,
+  trackLongTasks: true,
+  defaultPrivacyLevel: "mask-user-input",
 });
 
 export const PageBottomIcon: React.FC<{ color: string; first?: boolean }> = ({

@@ -56,6 +56,26 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@datadog/browser-core@4.42.0":
+  version "4.42.0"
+  resolved "https://registry.yarnpkg.com/@datadog/browser-core/-/browser-core-4.42.0.tgz#102d5838eae7aa46aa74081043eac5ea084c5fd2"
+  integrity sha512-/yrShMoq0XEpyFQLbYq+gxwVF71nlZq1QbCYMlKQwIE9MppsBMaJDbNklGaZTBA4y0MhAh7PH9cjCYf7jtZJmQ==
+
+"@datadog/browser-rum-core@4.42.0":
+  version "4.42.0"
+  resolved "https://registry.yarnpkg.com/@datadog/browser-rum-core/-/browser-rum-core-4.42.0.tgz#e8345f9fa8a7df7c8f797c918866d98420e7202e"
+  integrity sha512-N1Mr5hi8/rEeZXbjYWwGpao463U1FGTFOjamqHy2JMLSiDdQI06nbqbsyJ1zA0ZvEfhq74ub8CVrrCww7pYp1Q==
+  dependencies:
+    "@datadog/browser-core" "4.42.0"
+
+"@datadog/browser-rum@^4.42.0":
+  version "4.42.0"
+  resolved "https://registry.yarnpkg.com/@datadog/browser-rum/-/browser-rum-4.42.0.tgz#16aceae9940a24fd4a47dffe31cdc0974f05d6f3"
+  integrity sha512-N1CMefB7DI8F7Utcti0YzsPHjmq61lRrsDQbcIYeJDr6crqf4Jzu8wifY2l0hucwJ6mIk+etHJCCZ6pZgMZP1Q==
+  dependencies:
+    "@datadog/browser-core" "4.42.0"
+    "@datadog/browser-rum-core" "4.42.0"
+
 "@emotion/babel-plugin@^11.10.6":
   version "11.10.6"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.10.6.tgz#a68ee4b019d661d6f37dec4b8903255766925ead"
