@@ -33,6 +33,7 @@ import {
 } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import confetti from "canvas-confetti";
+import Script from "next/script";
 
 const ComfortaaFont = Comfortaa({ subsets: ["latin"], variable: "--comfortaa-font" });
 
@@ -71,7 +72,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
       </Head>
       <Content id="content">
         <IntroPage className="justify-end flex">
@@ -123,6 +123,7 @@ export default function Home() {
           <PageBottomIcon color="#B49C61" />
         </IntroPage>
         <IntroPage id="page2" style={{ justifyContent: "space-between", paddingBottom: 0 }}>
+          <Script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></Script>
           <div
             style={{
               color: "#B49C61",
