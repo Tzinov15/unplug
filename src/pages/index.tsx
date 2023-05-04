@@ -16,9 +16,6 @@ import focusImage from "./focus.png";
 import messageImage from "./message.png";
 import settingsIcon from "./settings-icon.png";
 
-import drivingState from "./driving.jpg";
-import focusState from "./focus-state.jpg";
-
 import logo from "./logo.png";
 
 const stepIconSize = 32;
@@ -35,7 +32,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import confetti from "canvas-confetti";
 import Script from "next/script";
 
-const ComfortaaFont = Comfortaa({ subsets: ["latin"], variable: "--comfortaa-font" });
+const ComfortaaFont = Comfortaa({
+  subsets: ["latin"],
+  variable: "--comfortaa-font",
+  weight: "variable",
+});
 
 export const PageBottomIcon: React.FC<{ color: string }> = ({ color }) => {
   return (
@@ -132,6 +133,22 @@ export default function Home() {
             }}
             className={`${ComfortaaFont.className} text-sm md:text-xl my-1 w-full md:w-2/3 `}
           >
+            <p
+              className={`${ComfortaaFont.className} text-lg md:text-lg `}
+              style={{ color: "#B59D5F", background: "black", padding: ".5rem 1rem" }}
+            >
+              A{" "}
+              <span className={ComfortaaFont.className} style={{ fontWeight: 800 }}>
+                36 hour hiatus
+              </span>{" "}
+              from phones and technology while still keeping people within reach.
+              {/* Regain your time back one <b>unplugged</b> day at a time. */}
+            </p>
+
+            <hr
+              className="my-4"
+              style={{ height: "4px", borderTopColor: "#B49C61", width: "100%" }}
+            />
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
               Setup an auto-reply message (on iOS)
@@ -221,14 +238,14 @@ export default function Home() {
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
               Enable Driving Mode
             </p>
-            <div className="flex items-center justify-around w-full">
-              <Image priority src={focusState} alt={""} width={80} height={stepIconSize} />
-              <Image priority src={drivingState} alt={""} width={120} height={stepIconSize} />
-            </div>
+            <p className="my-3">
+              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
+              Turn on your ringer and keep your phone on you in case loved ones need to reach you.
+            </p>
 
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Lock your screen & ignore for 36 hours
+              Avoid the compulsions to check and scroll for 36 hours
             </p>
           </div>
 
