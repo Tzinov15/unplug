@@ -159,7 +159,7 @@ export default function Home() {
             >
               A{" "}
               <span className={ComfortaaFont.className} style={{ fontWeight: 800 }}>
-                36 hour hiatus
+                36 hour break
               </span>{" "}
               from phones and technology while still keeping people within reach.
               {/* Regain your time back one <b>unplugged</b> day at a time. */}
@@ -458,7 +458,8 @@ export default function Home() {
             time to unplug and live more.
             <br />
             <br />
-            We have tried a few of these technology fasts. And guess what? They are beautiful.
+            We tried a few of these technology breaks. They were beautiful. And now we to share the
+            magic.
             <br />
             <br />
             No, this is not an app. That would defeat the purpose. It is a movement, and we hope you
