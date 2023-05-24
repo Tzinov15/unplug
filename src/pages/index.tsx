@@ -170,7 +170,7 @@ export default function Home() {
             />
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#f7f1e0" size="1x" />
-              Setup an auto-reply message so others know why you're not replying.
+              Setup an auto-reply message so others know why you&apos;re not replying.
             </p>
             <div className="flex items-center justify-center w-full">
               <div className="flex flex-col items-center">
@@ -266,7 +266,7 @@ export default function Home() {
 
             <p className="my-3">
               <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#f7f1e0" size="1x" />
-              Don't look at your phone for 36 hours.
+              Don&apos;t look at your phone for 36 hours.
             </p>
           </div>
 
