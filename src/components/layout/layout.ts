@@ -79,7 +79,7 @@ export const Page = styled.section`
 `;
 
 export const IntroPage = styled(Page)`
-  background: linear-gradient(125deg, #f8f3e4 0%, #f8f3e4 100%);
+  background: linear-gradient(125deg, #e2d1a8 0%, #f8f3e4 100%);
   justify-content: center;
   padding: 3rem 2rem;
   border-bottom: solid 3px #b59d5f;
@@ -88,6 +88,10 @@ export const IntroPage = styled(Page)`
 export const SecondPage = styled(Page)`
   background: #e2d1a8;
   padding: 3rem;
+  background: #b59d5f;
+  justify-content: center;
+  padding: 3rem 2rem;
+  border-bottom: solid 3px #b59d5f;
 `;
 
 export const LastPage = styled(Page)`
@@ -100,6 +104,8 @@ export const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: -1rem;
+  margin-right: -1rem;
   img {
     width: 100%;
   }
@@ -116,8 +122,9 @@ export const SmallerImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
   img {
-    width: 70%;
+    width: 100%;
   }
 
   @media (min-width: 500px) {

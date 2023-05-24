@@ -3,7 +3,7 @@ import {
   ImageContainer,
   IntroPage,
   LastPage,
-  Page,
+  SecondPage,
   SmallerImageContainer,
 } from "@/components/layout/layout";
 import { Comfortaa } from "next/font/google";
@@ -22,13 +22,7 @@ const stepIconSize = 32;
 
 import { StyledText } from "@/components/typography/typography";
 import { datadogRum } from "@datadog/browser-rum";
-import {
-  faArrowRight,
-  faCircleArrowDown,
-  faPlug,
-  faSquareCheck,
-  faTree,
-} from "@fortawesome/pro-solid-svg-icons";
+import { faArrowRight, faCircleArrowDown, faSquareCheck } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import confetti from "canvas-confetti";
 import Script from "next/script";
@@ -97,7 +91,7 @@ export default function Home() {
       <Content id="content">
         <IntroPage className="justify-end flex">
           <ImageContainer>
-            <Image priority src="/unplug.png" alt={""} width={0} height={0} sizes="100vw" />
+            <Image priority src="/unplug-slim.png" alt={""} width={0} height={0} sizes="100vw" />
           </ImageContainer>
           <p
             className={`${ComfortaaFont.className} text-2xl md:text-4xl text-center `}
@@ -137,17 +131,17 @@ export default function Home() {
               className={`${ComfortaaFont.className} text-base md:text-lg `}
               style={{ color: "#B59D5F" }}
             >
-              We found a solve.
+              Our solve is simple.
             </p>
           </div>
 
           <PageBottomIcon color="#B49C61" first />
         </IntroPage>
-        <IntroPage id="page2" style={{ justifyContent: "space-between", paddingBottom: 0 }}>
+        <SecondPage id="page2" style={{ justifyContent: "space-between", paddingBottom: 0 }}>
           <Script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></Script>
           <div
             style={{
-              color: "#B49C61",
+              color: "#f7f1e0",
               fontWeight: 800,
               margin: "0 auto",
             }}
@@ -155,23 +149,28 @@ export default function Home() {
           >
             <p
               className={`${ComfortaaFont.className} text-lg md:text-lg `}
-              style={{ color: "#B59D5F", background: "black", padding: ".5rem 1rem" }}
+              style={{
+                color: "#B59D5F",
+                background: "black",
+                padding: ".5rem 1rem",
+                fontWeight: 200,
+              }}
             >
               A{" "}
               <span className={ComfortaaFont.className} style={{ fontWeight: 800 }}>
-                36 hour break
+                36 hour hiatus
               </span>{" "}
-              from phones and technology while still keeping people within reach.
+              from phones and screens while still staying reachable.
               {/* Regain your time back one <b>unplugged</b> day at a time. */}
             </p>
 
             <hr
               className="my-4"
-              style={{ height: "4px", borderTopColor: "#B49C61", width: "100%" }}
+              style={{ height: "4px", borderTopColor: "#f7f1e0", width: "100%" }}
             />
             <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Setup an auto-reply message (on iOS)
+              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#f7f1e0" size="1x" />
+              Setup an auto-reply message so others know why you're not replying.
             </p>
             <div className="flex items-center justify-center w-full">
               <div className="flex flex-col items-center">
@@ -184,12 +183,12 @@ export default function Home() {
                 />
                 <p
                   className={`${ComfortaaFont.className} text-xs md:text-md my-1 `}
-                  style={{ color: "#91928F" }}
+                  style={{ color: "white" }}
                 >
                   Settings
                 </p>
               </div>
-              <FontAwesomeIcon className="mx-1" icon={faArrowRight} color="#B49C61" size="2x" />
+              <FontAwesomeIcon className="mx-1" icon={faArrowRight} color="#f7f1e0" size="2x" />
               <div className="flex flex-col items-center">
                 <Image
                   priority
@@ -205,7 +204,7 @@ export default function Home() {
                   Focus
                 </p>
               </div>
-              <FontAwesomeIcon className="mx-2" icon={faArrowRight} color="#B49C61" size="2x" />
+              <FontAwesomeIcon className="mx-2" icon={faArrowRight} color="#f7f1e0" size="2x" />
 
               <div className="flex flex-col items-center">
                 <Image
@@ -222,82 +221,79 @@ export default function Home() {
                   Driving
                 </p>
               </div>
-              <FontAwesomeIcon className="mx-1" icon={faArrowRight} color="#B49C61" size="2x" />
+              <FontAwesomeIcon className="mx-1" icon={faArrowRight} color="#f7f1e0" size="2x" />
               <Image priority src={autoReplyImage} alt={""} width={94} height={32} />
             </div>
 
-            <SmallerImageContainer className="my-2">
-              <Image
-                priority
-                placeholder="blur"
-                src={messageImage}
-                alt={""}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </SmallerImageContainer>
-
-            <p className="text-center my-1">
-              <u
-                onClick={async () => {
-                  if (typeof window !== undefined) {
-                    window.navigator.clipboard.writeText(
-                      `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
-                    );
-                    confetti({
-                      colors: ["#B49C61"],
-                    });
-                  }
-                }}
-              >
-                Click here to copy the above
-              </u>
-            </p>
-            <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Enable Driving Mode
-            </p>
-            <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Turn on your ringer and keep your phone on you in case loved ones need to reach you.
-            </p>
+            <div className="flex w-100 items-center">
+              <SmallerImageContainer className="my-2">
+                <Image
+                  priority
+                  placeholder="blur"
+                  src={messageImage}
+                  alt={""}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
+              </SmallerImageContainer>
+              <p className="text-center my-1">
+                <u
+                  onClick={async () => {
+                    if (typeof window !== undefined) {
+                      window.navigator.clipboard.writeText(
+                        `Hi! You’ve reached me on an Unplugged day. I’m most likely enjoying the outdoors, reading in a coffee shop, or simply taking a break from technology. Feel free to call, I’d love to chat and will pick up, otherwise I won’t see your text until tomorrow and will get back to you then. Thanks! 😎 If you’re curious about what an Unplugged day is checkout https://www.unplug.club`
+                      );
+                      confetti({
+                        colors: ["#f7f1e0"],
+                      });
+                    }
+                  }}
+                >
+                  COPY
+                </u>
+              </p>
+            </div>
 
             <p className="my-3">
-              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#B49C61" size="1x" />
-              Avoid the compulsions to check and scroll for 36 hours (2 nights, 1 full day)
+              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#f7f1e0" size="1x" />
+              Enable Driving Mode so all inbound messages get this response.
+            </p>
+            <p className="my-3">
+              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#f7f1e0" size="1x" />
+              Turn on ringer & keep phone on you to stay reachable for emergencies.
+            </p>
+
+            <p className="my-3">
+              <FontAwesomeIcon className="mr-2" icon={faSquareCheck} color="#f7f1e0" size="1x" />
+              Don't look at your phone for 36 hours.
             </p>
           </div>
 
-          <PageBottomIcon color="#B49C61" />
-        </IntroPage>
-        <Page>
-          <div className="flex items-center flex-col w-full">
+          <PageBottomIcon color="#f7f1e0" />
+        </SecondPage>
+        <IntroPage
+          style={{
+            justifyContent: "flex-start",
+          }}
+        >
+          <div className="flex items-center flex-col justify-start w-full">
             <p
               className={`${ComfortaaFont.className} text-3xl md:text-6xl my-6 `}
               style={{
-                color: "#F6F1E0",
+                color: "#b59d5f",
                 fontWeight: 800,
               }}
             >
               Unplugged =
             </p>
 
-            <div className="flex items-start justify-between flex-row w-full">
-              <div className="flex items-start flex-col">
-                <p
-                  className={`${ComfortaaFont.className} text-xl md:text-3xl `}
-                  style={{
-                    color: "#F6F1E0",
-                    fontWeight: 800,
-                  }}
-                >
-                  <u>Not Allowed</u> <FontAwesomeIcon icon={faPlug} color="#F5EFDB" size="1x" />
-                </p>
+            <div className="flex items-start justify-between flex-col w-full">
+              <div className="flex items-center flex-col w-full">
                 <div
-                  className={`${ComfortaaFont.className} text-md md:text-xl mt-1 `}
+                  className={`${ComfortaaFont.className} text-lg md:text-xl mt-1 `}
                   style={{
-                    color: "#F6F1E0",
+                    color: "#b59d5f",
                     fontWeight: 800,
                   }}
                 >
@@ -318,45 +314,11 @@ export default function Home() {
                   <p>- No texting</p>
                 </div>
               </div>
-              <div className="flex items-start flex-col">
-                <p
-                  className={`${ComfortaaFont.className} text-xl md:text-3xl `}
-                  style={{
-                    color: "black",
-                    fontWeight: 800,
-                  }}
-                >
-                  <u>Allowed</u> <FontAwesomeIcon icon={faTree} color="black" size="1x" />
-                </p>
-                <div
-                  className={`${ComfortaaFont.className} text-md md:text-xl mt-1`}
-                  style={{
-                    color: "black",
-                    fontWeight: 800,
-                  }}
-                >
-                  <p>- Phone calls</p>
-                  <p>- Arts & crafts</p>
-                  <p>- Journaling</p>
-                  <p>- Reading</p>
-                  <p>- Exercise</p>
-                  <p>- Camping</p>
-                  <p>- Cooking</p>
-                  <p>- Painting</p>
-                  <p>- Meditation</p>
-                  <p>- Outdoor walks</p>
-                  <p>- Yoga</p>
-                  <p>- Friends over</p>
-                  <p>- Room organization</p>
-                  <p>- Play sports</p>
-                  <p>- Writing</p>
-                </div>
-              </div>
             </div>
           </div>
 
-          <PageBottomIcon color="white" />
-        </Page>
+          <PageBottomIcon color="#B49C61" />
+        </IntroPage>
         {/* <SecondPage>
           <p
             className={`${ComfortaaFont.className} text-3xl md:text-6xl my-2 `}
