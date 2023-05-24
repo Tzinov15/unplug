@@ -420,12 +420,12 @@ export default function Home() {
             time to unplug and live more.
             <br />
             <br />
-            We tried a few of these technology breaks. They were beautiful. And now we to share the
-            magic.
+            We tried a few of these technology breaks. They were beautiful. And now we want to share
+            the magic.
             <br />
             <br />
-            No, this is not an app. That would defeat the purpose. It is a movement, and we hope you
-            try it and tell your friends about it. Happy Unplugging 🎉
+            No, this is not an app. That would defeat the purpose. It is an experiment, and we hope
+            you try it and tell your friends about it. Happy Unplugging 🎉
           </StyledText>
 
           <Image priority src={logo} alt={""} width={100} height={100} className="my-3" />
